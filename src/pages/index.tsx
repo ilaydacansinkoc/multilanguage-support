@@ -1,7 +1,8 @@
 import { type NextPage } from "next";
 import Navbar from "./navbar";
 import { useEffect, useState } from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { IntlProvider } from "react-intl";
+import Login from "./login";
 
 const Home: NextPage = () => {
   const [language, setLanguage] = useState<string>("en");
@@ -26,10 +27,6 @@ const Home: NextPage = () => {
 
   if (!translations) return <div>Loading...</div>;
 
-  console.log(translations);
-
-  console.log(language);
-
   return (
     <>
       <IntlProvider
@@ -37,13 +34,13 @@ const Home: NextPage = () => {
         locale={language}
         messages={translations}
       >
-        <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#c4b9d4] to-[#903674]">
+        <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#c4b9d4] to-[#b592aa]">
           <Navbar
             setSelectedLanguage={(language: string) => {
               setLanguage(language);
             }}
           />
-          <FormattedMessage id="PLEASED_TO_MEET_YOU" />
+          <Login />
         </main>
       </IntlProvider>
     </>

@@ -14,3 +14,10 @@ model translations {
   de   String? @db.VarChar
   tr   String? @db.VarChar
 }
+
+model users {
+  id               Int      @id @default(autoincrement())
+  username         String?  @db.VarChar(25)
+  is_admin         Boolean?
+  website_language String?  @db.VarChar(10)
+}

@@ -3,6 +3,7 @@ import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useEffect, useState } from "react";
+import Text from "~/common/Text";
 import Emoji from "~/icons/Emoji";
 
 interface INavbarProps {
@@ -51,7 +52,8 @@ const Navbar = ({ setSelectedLanguage }: INavbarProps) => {
   };
 
   return (
-    <div className="absolute top-0 flex h-14 w-screen justify-end bg-slate-100">
+    <div className="absolute top-0 flex h-14 w-screen items-center justify-end bg-slate-100">
+      <Text id="WELCOME" extraClasses="mr-3" />
       <IconButton
         color="primary"
         aria-label="change language"
